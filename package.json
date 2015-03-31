@@ -1,0 +1,28 @@
+{
+  "name": "mongo-pipe-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon node_modules/mocha/bin/mocha ./tests/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edjafarov/mongo-pipe-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edjafarov/mongo-pipe-api/issues"
+  },
+  "homepage": "https://github.com/edjafarov/mongo-pipe-api",
+  "dependencies": {
+    "mongojs": "~0.18.2",
+    "es6-promise": "~2.0.1"
+  },
+  "devDependencies": {
+    "promise-pipe": "0.0.4",
+    "mocha": "~2.2.1",
+    "chai": "~2.2.0"
+  }
+}
