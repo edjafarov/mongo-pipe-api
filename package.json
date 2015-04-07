@@ -21,7 +21,7 @@
     "es6-promise": "~2.0.1"
   },
   "devDependencies": {
-    "promise-pipe": "0.0.4",
+    "promise-pipe": "0.0.5",
     "mocha": "~2.2.1",
     "chai": "~2.2.0"
   }

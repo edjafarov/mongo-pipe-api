@@ -1,5 +1,5 @@
 var MongoPipeApi = require('../index');
-var PromisePipe = require('promise-pipe');
+var PromisePipe = require('promise-pipe')();
 var expect = require('chai').expect;
 
 PromisePipe.use('db', MongoPipeApi('test', ['coll']));
