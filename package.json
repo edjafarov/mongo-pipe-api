@@ -1,8 +1,9 @@
 {
   "name": "mongo-pipe-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
+  "browser":"./src/MongoPipeApi.mock.js",
   "scripts": {
     "test": "nodemon node_modules/mocha/bin/mocha ./tests/**/*.spec.js"
   },
