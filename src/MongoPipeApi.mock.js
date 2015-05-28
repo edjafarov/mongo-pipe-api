@@ -7,7 +7,8 @@ module.exports = function(){
 		findOne:{},
 		remove:{},
 		save:{},
-		insert:{}
+		insert:{},
+    findAndModify:{}
 	};
   var collections = arguments[1];
   collections.forEach(function(name){
@@ -16,6 +17,8 @@ module.exports = function(){
 
   return  result;
 }
+
+module.exports.ObjectId = function(){}
 
 function wrappedCollection(result, name, collection){
 
@@ -35,6 +38,16 @@ function wrappedCollection(result, name, collection){
     });
   }
 
+
+  result.findAndModify[name] = function(data, context){
+    return new Promise(function(resolve, reject){
+
+      //dummy
+
+      console.log("should not be called");
+
+    });
+  }
 
   result.findOne[name] = function(data, context){
     return new Promise(function(resolve, reject){

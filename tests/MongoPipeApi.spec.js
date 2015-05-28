@@ -8,6 +8,7 @@ var dropPipe = PromisePipe().db.drop.coll();
 var insertPipe = PromisePipe().db.insert.coll();
 var findPipe = PromisePipe().db.find.coll();
 var findOnePipe = PromisePipe().db.findOne.coll();
+var findAndModifyPipe = PromisePipe().db.findAndModify.coll();
 var removePipe = PromisePipe().db.remove.coll();
 
 
@@ -71,6 +72,21 @@ describe("MongoPipeApi", function(){
       it('shoul be same as post', function(){
         expect(findOneResult).to.deep.equal(saveOneResult);
       })
+			describe('can modify item in collection', function(){
+				var updateResult;
+				before(function(done){
+					findAndModifyPipe({query:{_id:findOneResult._id}, update:{$set:{a:"Mock"}}}).then(function(resp){
+	          findOnePipe({_id: findOneResult._id}).then(function(resp){
+							updateResult = resp[0];
+	            done();
+	          })
+	        })
+	      })
+				it('shoul update the item', function(){
+	        expect(updateResult).to.have.property("a","Mock");
+	      })
+
+			})
     });
 
 
